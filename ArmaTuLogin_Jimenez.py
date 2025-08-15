@@ -11,7 +11,6 @@ def register_user():
     users[username]=password
     print(f"✅ Usuario '{username}' registrado con éxito.\n")
 
-
 def show_users():
     if not users:
         print("📭 No hay usuarios registrados.\n")
@@ -21,7 +20,6 @@ def show_users():
     for username in users:
         print(f"   • {username}")
     print()
-
 
 def login():
     global current_user
@@ -41,7 +39,6 @@ def login():
             print("❌ Contraseña incorrecta.\n")
     else:
         print("🚫 El usuario no existe.\n")
-
 
 def logout():
     global current_user
