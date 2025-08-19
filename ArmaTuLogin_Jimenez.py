@@ -1,4 +1,4 @@
-users={}
+USERS={}
 current_user=None
 
 def register_user():
@@ -29,16 +29,16 @@ def login():
         return
 
     username=input("👤 Usuario: ").strip()
-    password=input("🔑 Contraseña: ").strip()
-
-    if username in users:
-        if users[username]==password:
-            current_user=username
-            print(f"🎉 ¡Bienvenido, {username}! Sesión iniciada con éxito.\n")
-        else:
-            print("❌ Contraseña incorrecta.\n")
-    else:
+    if username not in USERS:
         print("🚫 El usuario no existe.\n")
+        return
+
+    password=input("🔑 Contraseña: ").strip()
+    if USERS[username]==password:
+        current_user=username
+        print(f"🎉 ¡Bienvenido, {username}! Sesión iniciada con éxito.\n")
+    else:
+        print("❌ Contraseña incorrecta.\n")
 
 def logout():
     global current_user
