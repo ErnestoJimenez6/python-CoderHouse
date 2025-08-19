@@ -3,21 +3,21 @@ current_user=None
 
 def register_user():
     username=input("📝 Ingresa un nombre de usuario: ").strip()
-    if username in users:
+    if username in USERS:
         print("⚠️ El usuario ya existe. Elige otro.\n")
         return
     
     password=input("🔒 Ingresa una contraseña: ").strip()
-    users[username]=password
+    USERS[username]=password
     print(f"✅ Usuario '{username}' registrado con éxito.\n")
 
 def show_users():
-    if not users:
+    if not USERS:
         print("📭 No hay usuarios registrados.\n")
         return
     
     print("👥 Usuarios registrados:")
-    for username in users:
+    for username in USERS:
         print(f"   • {username}")
     print()
 
