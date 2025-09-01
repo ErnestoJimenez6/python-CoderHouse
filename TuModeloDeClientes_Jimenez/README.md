@@ -31,6 +31,12 @@ Instalá el paquete en tu entorno local:
 python setup.py install
 ```
 
+o
+
+```bash
+pip install .
+```
+
 ---
 
 ## ▶️ Uso
