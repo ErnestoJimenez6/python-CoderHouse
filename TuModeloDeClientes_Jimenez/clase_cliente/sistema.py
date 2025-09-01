@@ -9,7 +9,6 @@ class Sistema:
         self.cargar_usuarios()
 
     def guardar_usuarios(self):
-        """Guarda los usuarios en el archivo de datos."""
         with open(self.archivo_datos,"w",encoding="utf-8") as f:
             datos={
                 u:vars(c) for u,c in self.usuarios.items()
@@ -17,7 +16,6 @@ class Sistema:
             json.dump(datos,f,ensure_ascii=False,indent=4)
 
     def cargar_usuarios(self):
-        """Carga los usuarios desde el archivo de datos."""
         try:
             with open(self.archivo_datos,"r",encoding="utf-8") as f:
                 datos=json.load(f)
